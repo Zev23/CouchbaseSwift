@@ -1,21 +1,22 @@
-import libcouchbase
 import Foundation
 
 //callbacks
 let storage_callback:lcb_store_callback = {
     (instance, cookie, op, err, resp) -> Void in
     let key =  NSData(bytes: resp!.pointee.v.v0.key, length: resp!.pointee.v.v0.nkey)
-    print("Stored key \(NSString(data: key, encoding: NSUTF8StringEncoding)!)")
+    print("Stored key \(NSString(data: key as Data, encoding: String.Encoding.utf8.rawValue)!)")
 }
 
 let get_callback:lcb_get_callback = {
     (instance, cookie, err, resp) -> Void in
     let key =  NSData(bytes: resp!.pointee.v.v0.key, length: resp!.pointee.v.v0.nkey)
-    print("Retrieved key \(NSString(data: key, encoding: NSUTF8StringEncoding)!)")
+    print("Retrieved key \(NSString(data: key as Data, encoding: String.Encoding.utf8.rawValue)!)")
     
     let bytes = NSData(bytes:resp!.pointee.v.v0.bytes, length:resp!.pointee.v.v0.nbytes)
-    print("Value is \(NSString(data: bytes, encoding: NSUTF8StringEncoding)!)")
+    print("Value is \(NSString(data: bytes as Data, encoding: String.Encoding.utf8.rawValue)!)")
 }
+
+
 
 var cropts:lcb_create_st = lcb_create_st()
 cropts.version = 3;
