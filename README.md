@@ -1,5 +1,5 @@
 #CouchbaseSwift
-[TOC]
+
 ##Introduction
 This project demos how to use Couchbase C SDK with Swift SDK (**without Xcode**). Following the Couchbase C SDK getting started example.
 
@@ -32,7 +32,7 @@ Get from couchbase.com. Once installed create a `default` bucket.
 
 ##Installation & Run
 ### Download
-`$ git clone https://github.com/Zev23/CouchbaseSwift.git`
+`$ git clone -b no-xcode https://github.com/Zev23/CouchbaseSwift.git`
 
 ### Run
 ```sh
