@@ -24,7 +24,7 @@ Get from couchbase.com. Once installed create a `default` bucket.
 
 ##Installation & Run
 ### Download
-`$ git clone -b xcode https://github.com/Zev23/CouchbaseSwift.git`
+`$ git clone https://github.com/Zev23/CouchbaseSwift.git`
 
 ### Open project
 ```sh
